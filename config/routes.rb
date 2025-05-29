@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :bookmarks
   resources :notifications
   resources :post_categories

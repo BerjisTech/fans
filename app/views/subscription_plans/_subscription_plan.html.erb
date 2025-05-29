@@ -1,0 +1,26 @@
+<div id="<%= dom_id subscription_plan %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= subscription_plan.user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= subscription_plan.title %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= subscription_plan.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= subscription_plan.price %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Billing frequency:</strong>
+    <%= subscription_plan.billing_frequency %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Is active:</strong>
+    <%= subscription_plan.is_active? ? "Yes" : "No" %>
+  </div>
+</div>

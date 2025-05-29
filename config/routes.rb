@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
+  
+  root 'home#index'
+
+  # Devise routes should come first
+  devise_for :users
+
+  # Namespaced admin routes
   namespace :staff do
     get "dashboard/index"
   end
+
   namespace :admin do
-    get "user_roles/edit"
-    get "user_roles/update"
     get "dashboard/index"
-    resources :users, only: [ :index, :show, :edit, :update, :destroy ]
-    resources :posts, only: [ :index, :show, :destroy ]
-    resources :reports, only: [ :index, :show, :update ]
+    resources :user_roles, only: [:edit, :update]
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :destroy]
+    resources :reports, only: [:index, :show, :update]
   end
-  devise_for :users
+
+  # Regular resources
   resources :bookmarks
   resources :notifications
   resources :post_categories
@@ -25,17 +33,10 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :subscription_plans
   resources :profiles
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Root route
+  root "posts#index"
 end

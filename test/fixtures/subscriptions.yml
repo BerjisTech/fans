@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  subscription_plan: one
+  start_date: 2025-05-29 16:12:51
+  end_date: 2025-05-29 16:12:51
+  status: MyString
+
+two:
+  user: two
+  subscription_plan: two
+  start_date: 2025-05-29 16:12:51
+  end_date: 2025-05-29 16:12:51
+  status: MyString

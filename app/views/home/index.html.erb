@@ -32,7 +32,7 @@
       
       <div class="cta-buttons">
         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-        <%= link_to "Browse Creators", creators_path, class: "btn btn-outline-primary btn-lg" %>
+        <%= link_to "Browse Creators", posts_path, class: "btn btn-outline-primary btn-lg" %>
       </div>
     </div>
   </div>
@@ -45,13 +45,6 @@
           <%= render 'creators/creator_card', creator: creator %>
         <% end %>
       </div>
-    </section>
-
-    <section class="testimonials">
-      <h2>What Our Users Say</h2>
-      <% @testimonials.each do |testimonial| %>
-        <%= render 'testimonials/card', testimonial: testimonial %>
-      <% end %>
     </section>
   </div>
 <% end %>

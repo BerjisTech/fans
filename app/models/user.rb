@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: {
+  enum :role, {
     user: "user",        # Regular user
     creator: "creator",  # Content creator
     staff: "staff",      # Support staff

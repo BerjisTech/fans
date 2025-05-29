@@ -7,7 +7,6 @@ class HomeController < ApplicationController
     else
       # For guests, show landing page with signup options
       @popular_creators = User.creators.popular.limit(3)
-      @testimonials = Testimonial.featured
     end
   end
 end

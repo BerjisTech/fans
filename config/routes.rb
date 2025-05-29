@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :bookmarks
+  resources :notifications
+  resources :post_categories
+  resources :categories
   resources :comments
   resources :likes
   resources :conversations

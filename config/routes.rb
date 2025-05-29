@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :subscriptions
   resources :subscription_plans
   resources :profiles

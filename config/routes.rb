@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :staff do
+    get "dashboard/index"
+  end
+  namespace :admin do
+    get "user_roles/edit"
+    get "user_roles/update"
+    get "dashboard/index"
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :destroy]
+    resources :reports, only: [:index, :show, :update]
+  end
   devise_for :users
   resources :bookmarks
   resources :notifications

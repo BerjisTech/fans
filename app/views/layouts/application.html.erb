@@ -22,13 +22,16 @@
   </head>
 
   <body>
-  <% if current_user.admin? || current_user.superadmin? %>
-  <%= link_to 'Admin Dashboard', admin_dashboard_path, class: 'nav-link' %>
-<% end %>
+  
+    <% if current_user %>
+      <% if current_user.admin? || current_user.superadmin? %>
+      <%= link_to 'Admin Dashboard', admin_dashboard_path, class: 'nav-link' %>
+      <% end %>
+      <% if current_user.staff? || current_user.admin? || current_user.superadmin? %>
+        <%= link_to 'Moderation Tools', staff_reports_path, class: 'nav-link' %>
+      <% end %>
+    <% end %>
 
-<% if current_user.staff? || current_user.admin? || current_user.superadmin? %>
-  <%= link_to 'Moderation Tools', staff_reports_path, class: 'nav-link' %>
-<% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,7 +1,7 @@
 # app/controllers/admin/user_roles_controller.rb
 class Admin::UserRolesController < Admin::BaseController
-  before_action :set_user, only: [:edit, :update]
-  before_action :require_superadmin!, only: [:edit, :update]
+  before_action :set_user, only: [ :edit, :update ]
+  before_action :require_superadmin!, only: [ :edit, :update ]
 
   def edit
   end

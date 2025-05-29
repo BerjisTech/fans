@@ -3,7 +3,7 @@ module Auditable
   extend ActiveSupport::Concern
 
   included do
-    after_action :log_action, only: [:create, :update, :destroy]
+    after_action :log_action, only: [ :create, :update, :destroy ]
   end
 
   private

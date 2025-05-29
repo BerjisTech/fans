@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     get "user_roles/edit"
     get "user_roles/update"
     get "dashboard/index"
-    resources :users, only: [:index, :show, :edit, :update, :destroy]
-    resources :posts, only: [:index, :show, :destroy]
-    resources :reports, only: [:index, :show, :update]
+    resources :users, only: [ :index, :show, :edit, :update, :destroy ]
+    resources :posts, only: [ :index, :show, :destroy ]
+    resources :reports, only: [ :index, :show, :update ]
   end
   devise_for :users
   resources :bookmarks

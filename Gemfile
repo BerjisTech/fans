@@ -68,6 +68,6 @@ gem "devise", "~> 4.9"
 
 gem "pundit", "~> 2.5"
 
-gem "rubocop", "~> 1.75"
+gem "rubocop", "~> 1.76"
 
 gem "tailwindcss-ruby", "~> 4.1"
